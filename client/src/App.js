@@ -1,5 +1,6 @@
 import Banner from "../src/assets/chatty.jpg";
-import { AppBar, Typography } from "@material-ui/core";
+import { AppBar } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import VideoPlayer from "./components/VideoPlayer";
 import Notification from "./components/Notification";
 import Options from "./components/Options";

@@ -5,10 +5,8 @@ import App from "./App";
 import { ContextProvider } from "./SocketContext";
 
 ReactDOM.render(
-  <React.StrictMo>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
-  </React.StrictMo>,
+  <ContextProvider>
+    <App />
+  </ContextProvider>,
   document.getElementById("root")
 );
