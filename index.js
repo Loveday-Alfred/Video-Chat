@@ -14,23 +14,23 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-  res.send("server up and running.");
+  res.send("Running");
 });
 
 io.on("connection", (socket) => {
   socket.emit("me", socket.id);
 
   socket.on("disconnect", () => {
-    socket.broadcast.emit("callended");
+    socket.broadcast.emit("callEnded");
   });
 
-  socket.on("calluser", ({ userToCall, signalData, from, name }) => {
-    io.to(userToCall).emit("calluser", { signal: signalData, from, name });
+  socket.on("callUser", ({ userToCall, signalData, from, name }) => {
+    io.to(userToCall).emit("callUser", { signal: signalData, from, name });
   });
 
-  socket.on("answercall", (data) => {
-    io.to(data.to).emit("callaccepted", data.signal);
+  socket.on("answerCall", (data) => {
+    io.to(data.to).emit("callAccepted", data.signal);
   });
 });
 
-server.listen(PORT, () => console.log(`Server listening on Port ${PORT}`));
+server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

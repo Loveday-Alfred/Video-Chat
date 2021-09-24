@@ -43,13 +43,11 @@ const App = () => {
           className={classes.wrapper}
           style={{
             backgroundImage: `url(${Banner})`,
-            width: "100%",
-            height: "99vh",
           }}
         >
           <AppBar className={classes.appBar} position="static" color="inherit">
             <Typography variant="h4" align="center">
-              Chatty App
+              Chatty Chatty
             </Typography>
           </AppBar>
           <VideoPlayer />
